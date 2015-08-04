@@ -1,0 +1,1280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InventoryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="InventoryModelStoreContainer">
+          <EntitySet Name="AudioVideo" EntityType="InventoryModel.Store.AudioVideo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Building" EntityType="InventoryModel.Store.Building" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Computer" EntityType="InventoryModel.Store.Computer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipment" EntityType="InventoryModel.Store.Equipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Furniture" EntityType="InventoryModel.Store.Furniture" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MiscTechnology" EntityType="InventoryModel.Store.MiscTechnology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Monitor" EntityType="InventoryModel.Store.Monitor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Printer" EntityType="InventoryModel.Store.Printer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Room" EntityType="InventoryModel.Store.Room" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Software" EntityType="InventoryModel.Store.Software" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Textbooks" EntityType="InventoryModel.Store.Textbooks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="InventoryModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRoom" EntityType="InventoryModel.Store.UserRoom" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AudioVideo_Room" Association="InventoryModel.Store.FK_AudioVideo_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="AudioVideo" EntitySet="AudioVideo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computer_Room" Association="InventoryModel.Store.FK_Computer_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Computer" EntitySet="Computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Room" Association="InventoryModel.Store.FK_Equipment_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Furniture_Room" Association="InventoryModel.Store.FK_Furniture_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Furniture" EntitySet="Furniture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MiscTechnology_Room" Association="InventoryModel.Store.FK_MiscTechnology_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="MiscTechnology" EntitySet="MiscTechnology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Room" Association="InventoryModel.Store.FK_Monitor_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Printer_Room" Association="InventoryModel.Store.FK_Printer_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Printer" EntitySet="Printer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Software_Room" Association="InventoryModel.Store.FK_Software_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Software" EntitySet="Software" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Textbooks_Room" Association="InventoryModel.Store.FK_Textbooks_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Textbooks" EntitySet="Textbooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoom_Room" Association="InventoryModel.Store.FK_UserRoom_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="UserRoom" EntitySet="UserRoom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoom_User" Association="InventoryModel.Store.FK_UserRoom_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRoom" EntitySet="UserRoom" />
+          </AssociationSet>
+          <AssociationSet Name="TblRooms_FK00" Association="InventoryModel.Store.TblRooms_FK00">
+            <End Role="Building" EntitySet="Building" />
+            <End Role="Room" EntitySet="Room" />
+          </AssociationSet>
+          <AssociationSet Name="TblRooms_FK01" Association="InventoryModel.Store.TblRooms_FK01">
+            <End Role="User" EntitySet="User" />
+            <End Role="Room" EntitySet="Room" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AudioVideo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Lumens" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="25" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Building">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BldName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Computer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="ComputerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Processor" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACAddressOne" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACAddressTwo" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACAddressWLAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="RAM" Type="nvarchar" MaxLength="255" />
+          <Property Name="OS" Type="nvarchar" MaxLength="255" />
+          <Property Name="WinLicense" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="100" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="RoomID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Furniture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MiscTechnology">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MonitorName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Size" Type="smallint" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Printer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PrinterName" Type="nvarchar" MaxLength="255" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="MACAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Color" Type="bit" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Warranty" Type="nvarchar" MaxLength="255" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoomNo" Type="int" Nullable="false" />
+          <Property Name="BldID" Type="uniqueidentifier" />
+          <Property Name="UserID" Type="uniqueidentifier" />
+          <Property Name="InventoryApproved" Type="bit" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="SoftwareName" Type="nvarchar" MaxLength="255" />
+          <Property Name="NumberOfLicenses" Type="smallint" />
+          <Property Name="ProductKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CostPerLicense" Type="nvarchar" MaxLength="255" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Textbooks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Publisher" Type="nvarchar" MaxLength="255" />
+          <Property Name="CopyrightDate" Type="datetime" />
+          <Property Name="YearPublished" Type="smallint" />
+          <Property Name="RoomID" Type="uniqueidentifier" />
+          <Property Name="ISBN" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DatePurchased" Type="date" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="FundSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="Discard" Type="bit" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Inventoried" Type="bit" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="BldName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeptID" Type="nvarchar" MaxLength="255" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="255" />
+          <Property Name="BusNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="25" />
+          <Property Name="Password" Type="nvarchar" MaxLength="25" />
+          <Property Name="AccountType" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserDirectory" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UserRoom">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoomID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Permission" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_AudioVideo_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="AudioVideo" Type="InventoryModel.Store.AudioVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioVideo">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computer_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Computer" Type="InventoryModel.Store.Computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computer">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="1" />
+          <End Role="Equipment" Type="InventoryModel.Store.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Furniture_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Furniture" Type="InventoryModel.Store.Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Furniture">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MiscTechnology_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="MiscTechnology" Type="InventoryModel.Store.MiscTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MiscTechnology">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Monitor" Type="InventoryModel.Store.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Printer_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Printer" Type="InventoryModel.Store.Printer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Printer">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Software_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Software" Type="InventoryModel.Store.Software" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Software">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Textbooks_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="0..1" />
+          <End Role="Textbooks" Type="InventoryModel.Store.Textbooks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Textbooks">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoom_Room">
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="1" />
+          <End Role="UserRoom" Type="InventoryModel.Store.UserRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoom">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoom_User">
+          <End Role="User" Type="InventoryModel.Store.User" Multiplicity="1" />
+          <End Role="UserRoom" Type="InventoryModel.Store.UserRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoom">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TblRooms_FK00">
+          <End Role="Building" Type="InventoryModel.Store.Building" Multiplicity="0..1" />
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Building">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="BldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TblRooms_FK01">
+          <End Role="User" Type="InventoryModel.Store.User" Multiplicity="0..1" />
+          <End Role="Room" Type="InventoryModel.Store.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventoryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AudioVideos" EntityType="InventoryModel.AudioVideo" />
+          <EntitySet Name="Buildings" EntityType="InventoryModel.Building" />
+          <EntitySet Name="Computers" EntityType="InventoryModel.Computer" />
+          <EntitySet Name="Equipments" EntityType="InventoryModel.Equipment" />
+          <EntitySet Name="Furnitures" EntityType="InventoryModel.Furniture" />
+          <EntitySet Name="MiscTechnologies" EntityType="InventoryModel.MiscTechnology" />
+          <EntitySet Name="Monitors" EntityType="InventoryModel.Monitor" />
+          <EntitySet Name="Printers" EntityType="InventoryModel.Printer" />
+          <EntitySet Name="Rooms" EntityType="InventoryModel.Room" />
+          <EntitySet Name="Softwares" EntityType="InventoryModel.Software" />
+          <EntitySet Name="Textbooks" EntityType="InventoryModel.Textbook" />
+          <EntitySet Name="Users" EntityType="InventoryModel.User" />
+          <EntitySet Name="UserRooms" EntityType="InventoryModel.UserRoom" />
+          <AssociationSet Name="FK_AudioVideo_Room" Association="InventoryModel.FK_AudioVideo_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="AudioVideo" EntitySet="AudioVideos" />
+          </AssociationSet>
+          <AssociationSet Name="TblRooms_FK00" Association="InventoryModel.TblRooms_FK00">
+            <End Role="Building" EntitySet="Buildings" />
+            <End Role="Room" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computer_Room" Association="InventoryModel.FK_Computer_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Computer" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Room" Association="InventoryModel.FK_Equipment_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Equipment" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Furniture_Room" Association="InventoryModel.FK_Furniture_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Furniture" EntitySet="Furnitures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MiscTechnology_Room" Association="InventoryModel.FK_MiscTechnology_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="MiscTechnology" EntitySet="MiscTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Room" Association="InventoryModel.FK_Monitor_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Monitor" EntitySet="Monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Printer_Room" Association="InventoryModel.FK_Printer_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Printer" EntitySet="Printers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Software_Room" Association="InventoryModel.FK_Software_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Software" EntitySet="Softwares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Textbooks_Room" Association="InventoryModel.FK_Textbooks_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Textbooks" EntitySet="Textbooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoom_Room" Association="InventoryModel.FK_UserRoom_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="UserRoom" EntitySet="UserRooms" />
+          </AssociationSet>
+          <AssociationSet Name="TblRooms_FK01" Association="InventoryModel.TblRooms_FK01">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Room" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoom_User" Association="InventoryModel.FK_UserRoom_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRoom" EntitySet="UserRooms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AudioVideo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Lumens" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_AudioVideo_Room" FromRole="AudioVideo" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Building">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="BldName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Rooms" Relationship="InventoryModel.TblRooms_FK00" FromRole="Building" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Computer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ComputerName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Processor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MACAddressOne" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MACAddressTwo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MACAddressWLAN" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RAM" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="OS" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="WinLicense" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Computer_Room" FromRole="Computer" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RoomID" Type="Guid" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Equipment_Room" FromRole="Equipment" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Furniture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Furniture_Room" FromRole="Furniture" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="MiscTechnology">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_MiscTechnology_Room" FromRole="MiscTechnology" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MonitorName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Size" Type="Int16" />
+          <Property Name="Type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Monitor_Room" FromRole="Monitor" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Printer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PrinterName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MACAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Color" Type="Boolean" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Warranty" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Printer_Room" FromRole="Printer" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="RoomNo" Type="Int32" Nullable="false" />
+          <Property Name="BldID" Type="Guid" />
+          <Property Name="UserID" Type="Guid" />
+          <Property Name="InventoryApproved" Type="Boolean" />
+          <NavigationProperty Name="AudioVideos" Relationship="InventoryModel.FK_AudioVideo_Room" FromRole="Room" ToRole="AudioVideo" />
+          <NavigationProperty Name="Building" Relationship="InventoryModel.TblRooms_FK00" FromRole="Room" ToRole="Building" />
+          <NavigationProperty Name="Computers" Relationship="InventoryModel.FK_Computer_Room" FromRole="Room" ToRole="Computer" />
+          <NavigationProperty Name="Equipments" Relationship="InventoryModel.FK_Equipment_Room" FromRole="Room" ToRole="Equipment" />
+          <NavigationProperty Name="Furnitures" Relationship="InventoryModel.FK_Furniture_Room" FromRole="Room" ToRole="Furniture" />
+          <NavigationProperty Name="MiscTechnologies" Relationship="InventoryModel.FK_MiscTechnology_Room" FromRole="Room" ToRole="MiscTechnology" />
+          <NavigationProperty Name="Monitors" Relationship="InventoryModel.FK_Monitor_Room" FromRole="Room" ToRole="Monitor" />
+          <NavigationProperty Name="Printers" Relationship="InventoryModel.FK_Printer_Room" FromRole="Room" ToRole="Printer" />
+          <NavigationProperty Name="Softwares" Relationship="InventoryModel.FK_Software_Room" FromRole="Room" ToRole="Software" />
+          <NavigationProperty Name="Textbooks" Relationship="InventoryModel.FK_Textbooks_Room" FromRole="Room" ToRole="Textbooks" />
+          <NavigationProperty Name="UserRooms" Relationship="InventoryModel.FK_UserRoom_Room" FromRole="Room" ToRole="UserRoom" />
+          <NavigationProperty Name="User" Relationship="InventoryModel.TblRooms_FK01" FromRole="Room" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="SoftwareName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NumberOfLicenses" Type="Int16" />
+          <Property Name="ProductKey" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CostPerLicense" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Software_Room" FromRole="Software" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Textbook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Publisher" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CopyrightDate" Type="DateTime" Precision="3" />
+          <Property Name="YearPublished" Type="Int16" />
+          <Property Name="RoomID" Type="Guid" />
+          <Property Name="ISBN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatePurchased" Type="DateTime" Precision="0" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FundSource" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Discard" Type="Boolean" />
+          <Property Name="Vendor" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Inventoried" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_Textbooks_Room" FromRole="Textbooks" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BldName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeptID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BusNo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="AccountType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserDirectory" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Rooms" Relationship="InventoryModel.TblRooms_FK01" FromRole="User" ToRole="Room" />
+          <NavigationProperty Name="UserRooms" Relationship="InventoryModel.FK_UserRoom_User" FromRole="User" ToRole="UserRoom" />
+        </EntityType>
+        <EntityType Name="UserRoom">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="RoomID" Type="Guid" Nullable="false" />
+          <Property Name="Permission" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Room" Relationship="InventoryModel.FK_UserRoom_Room" FromRole="UserRoom" ToRole="Room" />
+          <NavigationProperty Name="User" Relationship="InventoryModel.FK_UserRoom_User" FromRole="UserRoom" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_AudioVideo_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="AudioVideo" Type="InventoryModel.AudioVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioVideo">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TblRooms_FK00">
+          <End Role="Building" Type="InventoryModel.Building" Multiplicity="0..1" />
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Building">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="BldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computer_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Computer" Type="InventoryModel.Computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computer">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="1" />
+          <End Role="Equipment" Type="InventoryModel.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Furniture_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Furniture" Type="InventoryModel.Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Furniture">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MiscTechnology_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="MiscTechnology" Type="InventoryModel.MiscTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MiscTechnology">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Monitor" Type="InventoryModel.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Printer_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Printer" Type="InventoryModel.Printer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Printer">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Software_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Software" Type="InventoryModel.Software" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Software">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Textbooks_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="0..1" />
+          <End Role="Textbooks" Type="InventoryModel.Textbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Textbooks">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoom_Room">
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="1" />
+          <End Role="UserRoom" Type="InventoryModel.UserRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoom">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TblRooms_FK01">
+          <End Role="User" Type="InventoryModel.User" Multiplicity="0..1" />
+          <End Role="Room" Type="InventoryModel.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoom_User">
+          <End Role="User" Type="InventoryModel.User" Multiplicity="1" />
+          <End Role="UserRoom" Type="InventoryModel.UserRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoom">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InventoryModelStoreContainer" CdmEntityContainer="InventoryEntities">
+          <EntitySetMapping Name="AudioVideos">
+            <EntityTypeMapping TypeName="InventoryModel.AudioVideo">
+              <MappingFragment StoreEntitySet="AudioVideo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Lumens" ColumnName="Lumens" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buildings">
+            <EntityTypeMapping TypeName="InventoryModel.Building">
+              <MappingFragment StoreEntitySet="Building">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BldName" ColumnName="BldName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Computers">
+            <EntityTypeMapping TypeName="InventoryModel.Computer">
+              <MappingFragment StoreEntitySet="Computer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="Processor" ColumnName="Processor" />
+                <ScalarProperty Name="MACAddressOne" ColumnName="MACAddressOne" />
+                <ScalarProperty Name="MACAddressTwo" ColumnName="MACAddressTwo" />
+                <ScalarProperty Name="MACAddressWLAN" ColumnName="MACAddressWLAN" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="OS" ColumnName="OS" />
+                <ScalarProperty Name="WinLicense" ColumnName="WinLicense" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipments">
+            <EntityTypeMapping TypeName="InventoryModel.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Furnitures">
+            <EntityTypeMapping TypeName="InventoryModel.Furniture">
+              <MappingFragment StoreEntitySet="Furniture">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MiscTechnologies">
+            <EntityTypeMapping TypeName="InventoryModel.MiscTechnology">
+              <MappingFragment StoreEntitySet="MiscTechnology">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitors">
+            <EntityTypeMapping TypeName="InventoryModel.Monitor">
+              <MappingFragment StoreEntitySet="Monitor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MonitorName" ColumnName="MonitorName" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Printers">
+            <EntityTypeMapping TypeName="InventoryModel.Printer">
+              <MappingFragment StoreEntitySet="Printer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="PrinterName" ColumnName="PrinterName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="InventoryModel.Room">
+              <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
+                <ScalarProperty Name="BldID" ColumnName="BldID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="InventoryApproved" ColumnName="InventoryApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Softwares">
+            <EntityTypeMapping TypeName="InventoryModel.Software">
+              <MappingFragment StoreEntitySet="Software">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SoftwareName" ColumnName="SoftwareName" />
+                <ScalarProperty Name="NumberOfLicenses" ColumnName="NumberOfLicenses" />
+                <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+                <ScalarProperty Name="CostPerLicense" ColumnName="CostPerLicense" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Textbooks">
+            <EntityTypeMapping TypeName="InventoryModel.Textbook">
+              <MappingFragment StoreEntitySet="Textbooks">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="CopyrightDate" ColumnName="CopyrightDate" />
+                <ScalarProperty Name="YearPublished" ColumnName="YearPublished" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="FundSource" ColumnName="FundSource" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Discard" ColumnName="Discard" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Inventoried" ColumnName="Inventoried" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="InventoryModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BldName" ColumnName="BldName" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="BusNo" ColumnName="BusNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="UserDirectory" ColumnName="UserDirectory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRooms">
+            <EntityTypeMapping TypeName="InventoryModel.UserRoom">
+              <MappingFragment StoreEntitySet="UserRoom">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

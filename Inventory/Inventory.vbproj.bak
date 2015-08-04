@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCBB897A-7DAB-4764-9F01-58BF7624B799}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Inventory.My.MyApplication</StartupObject>
+    <RootNamespace>Inventory</RootNamespace>
+    <AssemblyName>Inventory</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\Documents\Software Projects\HSS Inventory\Deploy\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://techsupport/Inventory/</InstallUrl>
+    <ProductName>Inventory Management System</ProductName>
+    <PublisherName>Hartville R-II</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Inventory.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Inventory.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C554108640465EC8E1F49FFBAEA90ED868762BDE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Inventory_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Misc-Box.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.OfficeSkins.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v11.1.Win, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntitySpaces.Core">
+      <HintPath>..\..\Dependencies\EntitySpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.DynamicQuery, Version=2010.1.1025.0, Culture=neutral, PublicKeyToken=127bcb8ceedbe220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\EntitySpaces.DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Interfaces, Version=2010.1.1025.0, Culture=neutral, PublicKeyToken=127bcb8ceedbe220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\EntitySpaces.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Loader, Version=2010.1.1025.0, Culture=neutral, PublicKeyToken=127bcb8ceedbe220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\EntitySpaces.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.SqlClientProvider, Version=2010.1.1025.0, Culture=neutral, PublicKeyToken=127bcb8ceedbe220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\EntitySpaces.SqlClientProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Will\AppData\Roaming\Telerik\Updates\RadControls_WinForms_2010_2_11_712_dev_dlls\Bin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Will\AppData\Roaming\Telerik\Updates\RadControls_WinForms_2010_2_11_712_dev_dlls\Bin\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Will\AppData\Roaming\Telerik\Updates\RadControls_WinForms_2010_2_11_712_dev_dlls\Bin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Will\AppData\Roaming\Telerik\Updates\RadControls_WinForms_2010_2_11_712_dev_dlls\Bin\TelerikCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAV.Designer.vb">
+      <DependentUpon>frmAV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.vb">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComputers.Designer.vb">
+      <DependentUpon>frmComputers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmComputers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDistrictReport.Designer.vb">
+      <DependentUpon>frmDistrictReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDistrictReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEquipment.Designer.vb">
+      <DependentUpon>frmEquipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEquipment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFurniture.Designer.vb">
+      <DependentUpon>frmFurniture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFurniture.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformation.Designer.vb">
+      <DependentUpon>frmInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMisc.Designer.vb">
+      <DependentUpon>frmMisc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMisc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitor.Designer.vb">
+      <DependentUpon>frmMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonitor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinters.Designer.vb">
+      <DependentUpon>frmPrinters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoftware.Designer.vb">
+      <DependentUpon>frmSoftware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoftware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTextbook.Designer.vb">
+      <DependentUpon>frmTextbook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTextbook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.vb">
+      <DependentUpon>frmUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcome.Designer.vb">
+      <DependentUpon>frmWelcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWelcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Overview.vb" />
+    <Compile Include="PrintManagement.vb" />
+    <Compile Include="Reports\ComputerReport.Designer.vb">
+      <DependentUpon>ComputerReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ComputerReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AudioVideoReport.Designer.vb">
+      <DependentUpon>AudioVideoReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AudioVideoReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DistrictOverviewReport.Designer.vb">
+      <DependentUpon>DistrictOverviewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DistrictOverviewReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RoomReport.Designer.vb">
+      <DependentUpon>RoomReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RoomReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TextbookReport.Designer.vb">
+      <DependentUpon>TextbookReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TextbookReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EquipmentReport.Designer.vb">
+      <DependentUpon>EquipmentReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EquipmentReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FurnitureReport.Designer.vb">
+      <DependentUpon>FurnitureReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FurnitureReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MiscTechReport.Designer.vb">
+      <DependentUpon>MiscTechReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MiscTechReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SoftwareReport.Designer.vb">
+      <DependentUpon>SoftwareReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SoftwareReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PrinterReport.Designer.vb">
+      <DependentUpon>PrinterReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PrinterReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MonitorReport.Designer.vb">
+      <DependentUpon>MonitorReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonitorReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Session.vb" />
+    <Compile Include="frmSubmitTicket.Designer.vb">
+      <DependentUpon>frmSubmitTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubmitTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabManager.vb" />
+    <Compile Include="Visuals.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAV.resx">
+      <DependentUpon>frmAV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmComputers.resx">
+      <DependentUpon>frmComputers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDistrictReport.resx">
+      <DependentUpon>frmDistrictReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEquipment.resx">
+      <DependentUpon>frmEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFurniture.resx">
+      <DependentUpon>frmFurniture.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.resx">
+      <DependentUpon>frmInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMisc.resx">
+      <DependentUpon>frmMisc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonitor.resx">
+      <DependentUpon>frmMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinters.resx">
+      <DependentUpon>frmPrinters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSoftware.resx">
+      <DependentUpon>frmSoftware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTextbook.resx">
+      <DependentUpon>frmTextbook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWelcome.resx">
+      <DependentUpon>frmWelcome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ComputerReport.resx">
+      <DependentUpon>ComputerReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AudioVideoReport.resx">
+      <DependentUpon>AudioVideoReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DistrictOverviewReport.resx">
+      <DependentUpon>DistrictOverviewReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RoomReport.resx">
+      <DependentUpon>RoomReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TextbookReport.resx">
+      <DependentUpon>TextbookReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EquipmentReport.resx">
+      <DependentUpon>EquipmentReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FurnitureReport.resx">
+      <DependentUpon>FurnitureReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MiscTechReport.resx">
+      <DependentUpon>MiscTechReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SoftwareReport.resx">
+      <DependentUpon>SoftwareReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PrinterReport.resx">
+      <DependentUpon>PrinterReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonitorReport.resx">
+      <DependentUpon>MonitorReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubmitTicket.resx">
+      <DependentUpon>frmSubmitTicket.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Condition.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Release Notes.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.RoomCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.User.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.UserCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.DistrictReport.datasource" />
+    <None Include="Resources\IMS-Welcome.png" />
+    <None Include="Resources\Printer-64.png" />
+    <None Include="Resources\No_Save_64-2.png" />
+    <None Include="Resources\No_Save_64.png" />
+    <None Include="Resources\Save_64.png" />
+    <None Include="Resources\Alert.png" />
+    <None Include="Inventory_TemporaryKey.pfx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.AudioVideo.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.AudioVideoCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Computer.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.ComputerCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Equipment.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.EquipmentCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Furniture.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.FurnitureCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.MiscTechnology.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.MiscTechnologyCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Monitor.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.MonitorCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Printer.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.PrinterCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Room.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Software.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.SoftwareCollection.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.Textbooks.datasource" />
+    <None Include="My Project\DataSources\InventoryData.BusinessObjects.TextbooksCollection.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InventoryData\InventoryData.vbproj">
+      <Project>{2435C45C-C8AB-4C57-823B-53FF88519CDF}</Project>
+      <Name>InventoryData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InventoryLogic\InventoryLogic.vbproj">
+      <Project>{96528EC2-0FC3-49F0-94C0-E3A83AEB7331}</Project>
+      <Name>InventoryLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Misc-Box.ico" />
+    <None Include="Resources\help_blue-641.png" />
+    <None Include="Resources\help_blue-64.png" />
+    <None Include="Resources\Help-64.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_turn_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bricks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chair-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chair-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compass-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control-Panel-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\furniture_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\General Box_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Applications-Science-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HP-Printer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Box-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Box-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Box-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Box-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc-Box-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MusicIcon_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Computer Vista_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyComputer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyComputer_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My-PC-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My-PC-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scheduledtasks-med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scheduledtasks-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scheduledtasks-tiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign - Dollar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_offline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usb-hd-slick-drive-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up_641.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_online.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

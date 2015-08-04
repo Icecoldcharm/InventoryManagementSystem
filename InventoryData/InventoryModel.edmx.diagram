@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1bfe83d72bec4ba5877f4e2e30a9b31e" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="InventoryModel.AudioVideo" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Building" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Computer" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Equipment" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Furniture" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.MiscTechnology" Width="1.5" PointX="5.25" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Monitor" Width="1.5" PointX="8.375" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Printer" Width="1.5" PointX="5.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Room" Width="1.5" PointX="3" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Software" Width="1.5" PointX="5.25" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Textbook" Width="1.5" PointX="5.25" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.User" Width="1.5" PointX="0.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.UserRoom" Width="1.5" PointX="8.25" PointY="28.125" IsExpanded="true" />
+        <AssociationConnector Association="InventoryModel.FK_AudioVideo_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.TblRooms_FK00" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Computer_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Equipment_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Furniture_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_MiscTechnology_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Monitor_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Printer_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Software_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_Textbooks_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_UserRoom_Room" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.TblRooms_FK01" ManuallyRouted="false" />
+        <AssociationConnector Association="InventoryModel.FK_UserRoom_User" ManuallyRouted="false" >
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
